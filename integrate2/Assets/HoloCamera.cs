@@ -50,11 +50,12 @@ public class HoloCamera : MonoBehaviour
         // Fill in buffer with JPG data from image
         //List<byte> buffer = new List<byte>();
         //tex.GetRawTextureData();
-        List<byte> buffer = new List<byte>(ImageConversion.EncodeToJPG(tex));
+        byte[] buffer = ImageConversion.EncodeToJPG(tex);
 
 #if UNITY_UWP
             try 
             {
+				Debug.Log("sent");
                 var visionResult = await _cognitiveHelper.start(buffer);
                 var description = _cognitiveHelper.ExtractOcr(visionResult);
                 textMesh.text = description;
@@ -62,12 +63,13 @@ public class HoloCamera : MonoBehaviour
             catch(Exception e)
             {
                 textMesh.text = e.Message;
+				Debug.Log(e.Message);
             }
 #endif
 
-    }
+	}
 
-    public void TakePhotoToPreview(Renderer preview)
+	public void TakePhotoToPreview(Renderer preview)
     {
         Debug.Log("Take Photo preview");
         Texture2D image = TakePhoto();
