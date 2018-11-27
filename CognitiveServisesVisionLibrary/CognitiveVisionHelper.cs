@@ -19,7 +19,8 @@ namespace CognitiveServicesVisionLibrary
         private const int numberOfCharsInOperationId = 36;
         public CognitiveVisionHelper()
         {
-            _subscriptionKey = "ff07b42a5a4d4e0a8383b083fb05c0de";
+			// Replace this with real subscription key when building
+            _subscriptionKey = "elpsykongroo";
         }
         public ComputerVisionClient GetVisionServiceClient()
         {
