@@ -28,10 +28,10 @@ namespace CognitiveServicesVisionLibrary
             computerVision.Endpoint = "https://eastus.api.cognitive.microsoft.com";
             return computerVision;
         }
-        public async Task<TextOperationResult> start(List<byte> photoBuffer)
+        public async Task<TextOperationResult> start(byte[] photoBuffer)
         {
             var computerVision = GetVisionServiceClient();
-            Stream imageStream = new MemoryStream(photoBuffer.ToArray());
+            Stream imageStream = new MemoryStream(photoBuffer);
             return await ExtractLocalHandTextAsync(computerVision, imageStream);
         }
         private async Task<TextOperationResult> ExtractLocalHandTextAsync(
