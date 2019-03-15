@@ -40,3 +40,5 @@ uwp microsoft package
 azure.cognitiveservices
 
 Set the build toolbar to Release / x86 / Remote Machine. When prompted enter IPv4 address of HoloLens (obtained on device through Settings -> Network near the bottom of the page). Press green arrow and wait for deployment.
+
+You may need to get the latest version of Newtonsoft and search and replace all instances of Newtonsoft in the project for it to build correctly
