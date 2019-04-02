@@ -12,8 +12,15 @@ Open specific scene (abcdefg for now)
 
 # Build instructions
 
-(need to verify w/ Abdul)
+## EDITING ONE OF THE CLASS LIBRARIES
 
+When you edit one of the class libraries. Either The Cognitive Helper or the Spell Checker, you have to rebuild the project.
+1) Open the library you updated
+2) At the top menu go to Debug -> Properties. Then on the left you should be at build. In that place find output path at the bottom
+3) Click Browse and select the path to the project's asset folder (Should be Documents/ART/Integrate3/Assets/Plugins ...), and it should generate some files. If the files were there before, they should have been overwitten but you can delete them to be safe
+4) Build the class library project (Not the unity project)
+5) In unity, the project should have reloaded. Find the place where you saved the generated files and gind the dll file (The puzzle piece)
+6) Select it and to the right in select platforms make sure only WSAPlayer is selected. In platform settings make UWP the SDK. Check the box that says Dont process and apply. Follow steps on Common build. DOnt delete old app folder if you dont have to.
 ## FRESH BUILD
 
 Menu to Edit -> Project Settings -> Player. Under Publishing Settings make sure that InternetClient, InternetClientServer, WebCam, Microphone, and SpatialPerception are all enabled. Under XR Settings make sure Virtual Reality Supported is enabled and add Windows Mixed Reality under Virtual Reality SDKs if not there.
